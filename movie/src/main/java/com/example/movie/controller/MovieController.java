@@ -22,6 +22,10 @@ public class MovieController {
     public Movie getMovie(@PathVariable String movieId){
         return movieService.getMovie(movieId);
     }
+    @GetMapping("/movies/genre")
+    public List<Movie> getMoviesByGenre(@RequestParam String genre) {
+        return movieService.getByGenre(genre);
+    }
     @PostMapping("/createMovie")
     public Movie createMovie(@RequestBody Movie movie) {
         return movieService.create(movie);
