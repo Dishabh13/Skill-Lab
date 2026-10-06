@@ -20,6 +20,9 @@ public class MovieService {
     public Movie getMovie(String movieId){
         return movieRepository.findById(movieId).orElse(null);
     }
+    public List<Movie> getByGenre(String genre) {
+        return movieRepository.findByGenre(genre);
+    }
     public Movie create(Movie movie){
         return movieRepository.save(movie);
     }
